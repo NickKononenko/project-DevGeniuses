@@ -1,6 +1,5 @@
 body {
   font-family: 'DM Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
 }
 
 /* Container styles */
@@ -26,6 +25,34 @@ body {
   .container {
     padding-left: 24px;
     padding-right: 24px;
+    max-width: 1440px;
+  }
+}
+
+// Specific header container styles
+
+@media only screen and (min-width: 375px) {
+  .header .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 375px;
+    padding-left: 18.5px;
+    padding-right: 18.5px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header .container {
+    padding-left: 30.5px;
+    padding-right: 30.5px;
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .header .container {
+    padding-left: 22.5px;
+    padding-right: 22.5px;
     max-width: 1440px;
   }
 }
