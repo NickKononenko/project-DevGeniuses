@@ -1,0 +1,53 @@
+.charity_section_class {
+    margin: 0;
+    padding: 0;
+
+}
+
+.charity_brand {
+    filter: brightness(0);
+    filter: invert(1);
+
+}
+
+//     // filter: invert(1);
+// }
+
+.charity_title {
+    color: white;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+}
+
+.ukraine_icon {
+    color: white;
+}
+
+
+.charity_style {
+    list-style: none;
+}
+
+// .charity_section_class {
+//     display: inline;
+//     height: 352px;
+//     width: 336px;
+
+// }
+
+// @media only screen and (max-width: 375px) {
+.charity_markup {
+    margin: 0;
+    padding: 0;
+    border-radius: 16px;
+    background-color: rgba(79, 46, 232, 1);
+    // background-color: linear-gradient(rgba(79, 46, 232, 1) rgba(255, 255, 255, 1));
+
+    background-image: linear-gradient(to bottom, rgba(79, 46, 232, 1), rgba(79, 46, 232, 00.1));
+}
+
+// }
+.charity_round {
+    width: 32px;
+    color: white;
+}
