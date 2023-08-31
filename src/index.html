@@ -14,7 +14,30 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
+    <header class="header">
+      <div class="container">
+        <include src="./partials/header/header.html"></include>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div>
+          <include src="./partials/home-page/home-page.html"></include>
+        </div>
+        <div>
+          <include src="./partials/categories/categories.html"></include>
+        </div>
+        <div>
+          <include src="./partials/charity/charity.html"></include>
+        </div>
+        <include src="./partials/pagination/pagination.html"></include>
+        <include
+          src="./partials/mobile-first-page/mobile-first-page.html"
+        ></include>
+      </div>
+    </main>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/header/header.html"></include>
+    <include src="./partials/modal-window/modal-window.html"></include>
+    <include src="./partials/dark-theme/dark-theme.html"></include>
   </body>
 </html>

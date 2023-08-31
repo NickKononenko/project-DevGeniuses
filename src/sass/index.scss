@@ -1,3 +1,13 @@
 @import './common';
 @import './base';
 @import './vars';
+// Cтилі для кожного паршалу
+@import './header/header';
+@import './home-page/home-page';
+@import './categories/categories';
+@import './charity/charity';
+@import './pagination/pagination';
+@import './mobile-first-page/mobile-first-page';
+@import './modal-window/modal-window';
+@import './dark-theme/dark-theme';
+@import './shopping-list/shopping-list';
