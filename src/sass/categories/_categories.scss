@@ -1,12 +1,10 @@
 .categories {
-	display: flex;
+
 	min-width: 320px;
 	max-width: 327px;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 24px;
 	max-height: 228px;
 	overflow-y: scroll;
+
 	margin-top: 40px;
 	margin-bottom: 40px;
 	padding: 0px;
@@ -15,8 +13,7 @@
 
 @media only screen and (min-width: 768px) {
 	.categories {
-		gap: 32px;
-		width: 337px;
+		max-width: 337px;
 		max-height: 472px;
 		margin-bottom: 100px;
 	}
@@ -24,7 +21,7 @@
 
 @media only screen and (min-width: 1400px) {
 	.categories {
-		width: 356;
+		max-width: 356px;
 		margin-bottom: 86px;
 	}
 }
@@ -36,50 +33,54 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.12;
-	/* 112.5% */
+	height: 24px;
 	letter-spacing: -0.32px;
-
+	margin-bottom: 24px;
 	list-style: none;
 	cursor: pointer;
 	transition: all 250ms ease;
 }
 
-@media only screen and (min-width: 768) {
+.categories-list:last-child {
+	margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
 	.categories-list {
 		font-size: 18px;
 		line-height: 1.33;
+		margin-bottom: 32px;
 	}
 
 }
 
-.categories-list:hover,
-.categories-list:focus {
-	color: #4F2EE8;
-	font-weight: 700;
-	text-transform: uppercase;
-	font-size: 15px;
-}
-
-@media only screen and (min-width: 768) {
-
-	.categories-list:hover,
-	.categories-list:focus {
-		font-size: 17px;
-		line-height: 1.33;
-	}
+.categories-list:hover {
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 
 .uppercase {
+	font-family: DM Sans;
+	font-style: normal;
+	line-height: 1.12;
+	height: 24px;
+	letter-spacing: -0.32px;
+	margin-bottom: 24px;
+	list-style: none;
+
 	color: #4F2EE8;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 15px;
+
+	cursor: pointer;
+	transition: all 250ms ease;
 }
 
-@media only screen and (min-width: 768) {
+@media only screen and (min-width: 768px) {
 	.uppercase {
-		font-size: 17px;
+		font-size: 15px;
+		margin-bottom: 32px;
 	}
 }
 
