@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { spinnerStartForCategories, spinerStopForCategories } from './spin';
 
 import { fetchingByCategory } from './apiService';
 
@@ -45,16 +46,21 @@ const homePage = document.querySelector('.home-page');
 homePage.addEventListener('click', onBtnSeeMoreClick);
 async function onBtnSeeMoreClick(evt) {
   if (evt.target.classList.contains('js-btn-more')) {
-    // console.log(evt.target);
-    // console.log(evt.target.closest('.categories-cont').dataset.idCategories);
-    // console.log(evt.target.dataset.id);
     const currentCategory =
       evt.target.closest('.categories-cont').dataset.idCategories;
 
     try {
       const category = await fetchingByCategory(currentCategory);
       refs.homePage.innerHTML = '';
-      refs.homePage2.innerHTML = await createMarkupCategories(category);
+      refs.homePage.innerHTML = `<ul class="category-page list">
+      
+      ${await createMarkupCategories(category)}
+      </ul>`;
+
+      // refs.homePage2.insertAdjacentHTML(
+      //   'beforeend',
+      //   await createMarkupCategories(category)
+      // );
 
       // console.log(category);
     } catch (error) {
@@ -70,7 +76,7 @@ function createMarkupCategories(array) {
     .map(
       ({ list_name, books, _id, book_image, title, author }) =>
         `
-            <div class="book-item-cat">
+            <li class="book-item">
                   <a href="" class="portfolio-link link">
                   <div class="portfolio-thumb">
                       <div class="wrapper">          
@@ -83,7 +89,7 @@ function createMarkupCategories(array) {
                         <p class="name-book-text">${title}</p>
                         <p class="author-book-text">${author}</p>
                       </a>
-                  </div>
+                  </li>
         
           `
     )
@@ -98,8 +104,8 @@ function createMarkup(arr) {
         <div data-id-categories="${list_name}" class="categories-cont" >
           <h3 class="best-title">${list_name}</h3>
 
-            <div class="best-list">
-                  <div class="best-item">
+            <ul class="best-list">
+                  <li class="best-item">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
               <div class="wrapper">          
@@ -114,10 +120,10 @@ function createMarkup(arr) {
                         <p class="name-book-text">${books[0].title}</p>
                         <p class="author-book-text">${books[0].author}</p>
                       </a>
-                  </div>
+                  </li>
               
 
-              <div class="best-item">
+              <li class="best-item">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                    <div class="wrapper">     
@@ -132,10 +138,10 @@ function createMarkup(arr) {
                         <p class="name-book-text">${books[1].title}</p>
                         <p class="author-book-text">${books[1].author}</p>
                       </a>
-              </div>
+              </li>
 
 
-              <div class="best-item">
+              <li class="best-item">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                  <div class="wrapper">       
@@ -150,10 +156,10 @@ function createMarkup(arr) {
                         <p class="name-book-text">${books[2].title}</p>
                         <p class="author-book-text">${books[2].author}</p>
                       </a>
-              </div>
+              </li>
 
 
-              <div class="best-item">
+              <li class="best-item">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                   <div class="wrapper">      
@@ -168,9 +174,9 @@ function createMarkup(arr) {
                         <p class="name-book-text">${books[3].title}</p>
                         <p class="author-book-text">${books[3].author}</p>
                       </a>
-              </div>
+              </li>
 
-              <div class="best-item">
+              <li class="best-item">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                    <div class="wrapper">     
@@ -186,8 +192,8 @@ function createMarkup(arr) {
                         <p class="author-book-text">${books[4].author}</p>
                       </a>
                   
-              </div>
-</div>
+              </li>
+</ul>
                    <button class="btn-seemore js-btn-more" id="${
                      i + 1
                    }" type="button">SEE MORE</button>     
