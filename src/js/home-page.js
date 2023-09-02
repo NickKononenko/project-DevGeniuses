@@ -48,7 +48,7 @@ function createMarkup(arr) {
     .map(
       ({ list_name, books }) =>
         `
-        <div>
+        <div class="categories-cont">
           <h3 class="best-title">${list_name}</h3>
 
             <div class="best-list">
@@ -131,9 +131,8 @@ function createMarkup(arr) {
                   
               </div>
 </div>
-                        
-                </div>
-                  <button class="btn-seemore" type="button">SEE MORE</button>
+                   <button class="btn-seemore" type="button">SEE MORE</button>     
+                
                 </div>  
           `
     )
