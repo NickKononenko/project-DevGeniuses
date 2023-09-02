@@ -1,0 +1,99 @@
+.charity_section_class {
+
+    margin: 40px 0;
+    padding: 0;
+    max-width: 335px;
+
+}
+
+.charity_brand {
+    filter: brightness(0) invert(1);
+    max-height: 32px;
+}
+
+.charity_title_icon {
+    width: 20px;
+    height: 32px;
+
+
+}
+
+
+.charity_title {
+    font-size: 22px;
+    font-family: DM Sans;
+    line-height: 24px;
+
+    display: flex;
+    gap: 10px;
+    padding: 24px 0 0 40px;
+    gap: 12px;
+
+    color: white;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+
+    margin: 0 0 10px;
+}
+
+.ukraine_icon {
+    color: white;
+}
+
+
+.charity_li {
+    font-family: DM Sans;
+    margin-bottom: 20px;
+    color: white;
+    align-items: center;
+
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    text-align: center;
+}
+
+.charity_list_ul {
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 200px;
+
+    gap: 20px;
+}
+
+
+
+.charity_markup {
+
+    margin: 0;
+    padding: 0;
+    padding-bottom: 8px;
+    border-radius: 16px;
+    background-color: rgba(79, 46, 232, 1);
+    background-image: linear-gradient(180deg, rgba(79, 46, 232, 1), rgba(255, 255, 255, 0.7));
+}
+
+.charity_round {
+    margin: 0 auto 10px;
+    cursor: pointer;
+
+    width: 38px;
+    height: 38px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+
+    display: flex;
+    justify-content: space-around;
+
+    text-align: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+
+    //for desktop
+    .charity_list_ul {
+        height: 310px;
+    }
+}
