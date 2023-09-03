@@ -3,12 +3,12 @@
 .header {
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid $header-color-dark;
+  margin-bottom: 40px;
 }
 
 .header .container {
   display: flex;
   align-items: center;
-  
 }
 
 // Header logo
@@ -180,8 +180,8 @@
   border: none;
   background-color: transparent;
 }
-.burger-btn-close { 
-padding: 16.5px 0;
+.burger-btn-close {
+  padding: 16.5px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,13 +189,13 @@ padding: 16.5px 0;
   background-color: transparent;
 }
 
-.burger-btn-close { 
+.burger-btn-close {
   padding: 16.5px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
 }
 
 .burger-btn-icon {
@@ -223,6 +223,6 @@ padding: 16.5px 0;
   }
 }
 
-.js-switch-btn { 
+.js-switch-btn {
   display: none;
 }
