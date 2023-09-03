@@ -87,14 +87,24 @@
 }
 
 .categories::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  height: 114px;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    /*color-stop(0.12, rgb(220, 220, 220)),*/
-      color-stop(0.5, rgb(153, 137, 226)),
-    color-stop(0.86, rgb(79, 46, 232))
-  );
+	border-radius: 10px;
+	height: 114px;
+	background-image: -webkit-gradient(linear,
+			left bottom,
+			left top,
+			color-stop(0.5, rgb(153, 137, 226)),
+			color-stop(0.86, rgb(79, 46, 232)));
+}
+
+
+
+
+.categories-list-book {
+	margin-top: 40px;
+	margin-bottom: 80px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 40px;
+
 }

@@ -16,31 +16,35 @@ function fetchBooks() {
   });
 }
 
-fetchBooks()
-  .then(data => {
-    console.log(data);
-    // console.log(data[1].books);
+export function fetchBooksHomePage() {
+  fetchBooks()
+    .then(data => {
+      console.log(data);
+      // console.log(data[1].books);
 
-    refs.homePage.insertAdjacentHTML('beforeend', createMarkup(data));
-    console.log(document.documentElement.clientWidth);
+      refs.homePage.insertAdjacentHTML('beforeend', createMarkup(data));
+      console.log(document.documentElement.clientWidth);
 
-    // const bestList = document.querySelectorAll('.best-list');
-    // console.log(bestList);
+      const bestList = document.querySelectorAll('.best-list');
+      // console.log(bestList);
 
-    // const nameBook = document.querySelector('.name-book-text');
-    // console.log(nameBook.textContent);
-  })
-  .catch(error => {
-    console.log(error.message);
-    Notiflix.Notify.failure(`Oops! ${error.message}! Try reloading the page!`, {
-      width: '380px',
-      position: 'center-center',
-      timeout: 6000,
-      clickToClose: true,
+      const nameBook = document.querySelector('.name-book-text');
+      console.log(nameBook.textContent);
+    })
+    .catch(error => {
+      console.log(error.message);
+      Notiflix.Notify.failure(`Oops! ${error.message}! Try reloading the page!`, {
+        width: '380px',
+        position: 'center-center',
+        timeout: 6000,
+        clickToClose: true,
+      });
+
+      // refs.loader.classList.add('is-hidden');
     });
+}
 
-    // refs.loader.classList.add('is-hidden');
-  });
+fetchBooksHomePage();
 
 const homePage = document.querySelector('.home-page');
 homePage.addEventListener('click', onBtnSeeMoreClick);
