@@ -2,12 +2,12 @@ function FavModal() {
   const closeModalBtn = document.querySelector('[data-modal-close]');
   const modalFav = document.querySelector('[data-modal]');
   document.body.classList.add('modal-open');
-  modalFav.classList.remove('is-hidden-fav');
+  modalFav.classList.remove('is-hidden-pop-up');
   closeModalBtn.addEventListener('click', closeModal);
 
   function closeModal() {
     document.body.classList.remove('modal-open');
-    modalFav.classList.add('is-hidden-fav');
+    modalFav.classList.add('is-hidden-pop-up');
     modalFav.removeEventListener('click', onBackdropCloseModal);
     closeModalBtn.removeEventListener('click', closeModal);
     document.removeEventListener('keydown', onEscCloseModal);

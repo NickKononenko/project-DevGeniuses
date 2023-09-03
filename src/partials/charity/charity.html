@@ -1,12 +1,31 @@
-<div class="charity_markup gradient">
-    <div class="charity-header">
-        <h3 class="charity_title"> Support Ukraine </h3>
-        <img class="charity_title_icon" src="./images/charity/uk_icon.png">
+<div class="container donate-container gradient">
+    <div class="donate-header">
+        <span class="donate-paragraph">Support Ukraine</span>
+        <svg class="donate-emblem">
+            <use href="./images/sprite.svg#icon-ukraine-trizub" width="20" height="32"></use>
+        </svg>
     </div>
-    <div class="charity-donat">
-        <ul class="charity_list_ul" data-source="charity_list"></ul>
+    <div class="donate-funds-visible swiper slider my-swiper">
+        <ul class="donate-funds-list swiper-wrapper" id="donateFundsList"></ul>
     </div>
-    <div class="charity_round">
-        <img class="charity_chek" src="./images/charity/fi-rr-angle-small-left.png" data-source="charity_scroll">
+
+    <!-- Button down -->
+    <div class="donate-block-arrow">
+        <button class="donate-button swiper-button-down">
+            <svg class="donate-arrow">
+                <use class="use-donate" href="./images/sprite.svg#icon-angle"></use>
+            </svg>
+        </button>
     </div>
+    <!-- !Button down!  -->
+
+    <!-- Button up -->
+    <div class="donate-block-arrow">
+        <button class="donate-button-up swiper-button-top">
+            <svg class="donate-arrow-up">
+                <use class="use-donate" href="./images/sprite.svg#icon-angle"></use>
+            </svg>
+        </button>
+    </div>
+    <!-- !Button up!  -->
 </div>
