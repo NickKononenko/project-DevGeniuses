@@ -3,7 +3,6 @@
   max-width: 327px;
   max-height: 228px;
   overflow-y: scroll;
-  margin-bottom: 40px;
   padding: 0px;
 }
 
@@ -11,14 +10,12 @@
   .categories {
     max-width: 337px;
     max-height: 472px;
-    margin-bottom: 100px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
   .categories {
     max-width: 356px;
-    margin-bottom: 86px;
   }
 }
 
