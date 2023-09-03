@@ -1,65 +1,59 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BookShelf</title>
-    <link rel="icon" href="./images/favicon.svg" />
+    <title>Page title</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="index.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <header class="header-shoplist">
-      <div class="container">
-        <include src="./partials/header/header.html"></include>
-      </div>
+        <div class="container">
+            <include src="./partials/header/header.html"></include>
+        </div>
     </header>
 
+
     <main>
-      <div class="container container-shop-list">
-        <aside
-          class="shopping-list-aside shop-list-aside"
-          style="padding-top: 0px"
-        >
-          <div class="home-donate">
-            <include src="./partials/charity/charity.html"></include>
-          </div>
-        </aside>
-        <div class="container-shopping-list">
-          <h1 class="shoping-list-header">
-            Shopping <span class="shoping-list-part">List</span>
-          </h1>
-          <div class="shopping-list"></div>
-          <div class="empty-shopping-list">
-            <p class="shopping-list-text">
-              This page is empty, add some books and proceed to order.
-            </p>
-            <img
-              srcset="
-                ./images/shopping_list/shoping-list-empty-lg-2x.png,
-                ./images/shopping_list/shoping-list-empty-mobile-sm-2x.png,
-                ./images/shopping_list/shoping-list-empty-mobile-sm.png
-              "
-              src="./images/shopping_list/shoping-list-empty-lg.png"
-              alt="img of books"
-              class="shopping-list-book-img"
-            />
-          </div>
+        <div class="container container-shop-list">
+            <aside class="shopping-list-aside shop-list-aside" style="padding-top: 0px">
+                <div class="home-donate">
+                    <include src="./partials/charity/charity.html"></include>
+                </div>
+            </aside>
+            <div class="container-shopping-list">
+                <h1 class="shoping-list-header">
+                    Shopping <span class="shoping-list-part">List</span>
+                </h1>
+                <div class="shopping-list"></div>
+                <div class="empty-shopping-list">
+                    <p class="shopping-list-text">
+                        This page is empty, add some books and proceed to order.
+                    </p>
+                    <img srcset="
+                      ./images/shopping_list/shoping-list-empty-lg-2x.png,
+                      ./images/shopping_list/shoping-list-empty-mobile-sm-2x.png,
+                      ./images/shopping_list/shoping-list-empty-mobile-sm.png
+                    " src="./images/shopping_list/shoping-list-empty-lg.png" alt="img of books"
+                        class="shopping-list-book-img" />
+                </div>
+            </div>
         </div>
-      </div>
-      <include src="./partials/pagination/pagination.html"></include>
+        <include src="./partials/pagination/pagination.html"></include>
     </main>
 
     <!-- JS LINKS -->
     <script type="module" src="./js/shopping-list.js"></script>
     <script type="module" src="./js/header.js"></script>
+
 
     <script type="module" src="./js/charity.js"></script>
     <script type="module" src="./js/pagination.js"></script>
@@ -69,5 +63,6 @@
     <script type="module" src="./js/fetchBookById.js"></script>
     <script type="module" src="./js/apiService.js"></script>
     <script type="module" src="./js/spin.js"></script>
-  </body>
+</body>
+
 </html>
