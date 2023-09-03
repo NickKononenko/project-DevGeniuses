@@ -18,9 +18,10 @@ fetchBooks()
     // console.log(data[1].books);
 
     refs.homePage.insertAdjacentHTML('beforeend', createMarkup(data));
+    console.log(document.documentElement.clientWidth);
 
     const bestList = document.querySelectorAll('.best-list');
-    console.log(bestList);
+    // console.log(bestList);
 
     const nameBook = document.querySelector('.name-book-text');
     console.log(nameBook.textContent);
@@ -47,75 +48,92 @@ function createMarkup(arr) {
     .map(
       ({ list_name, books }) =>
         `
-        <div>
+        <div class="categories-cont">
           <h3 class="best-title">${list_name}</h3>
-            <ul class="best-list list">
-              <li class="best-item">
-                <a href="" class="portfolio-link link">
-                <div class="portfolio-thumb">
-                  <img class="cover" src="${books[0].book_image}" alt="${books[0].title}" loading="lazy" width="335"/>
-                  <p class="overlay">
-                  QUICK VIEW
-                 </p>
-                </div> 
-                  
-                    <p class="name-book-text">${books[0].title}</p>
-                    <p class="author-book-text">${books[0].author}</p>
-                  
-                  </a>
-                </li>
-              <li class="best-item">
-                <a href="" class="portfolio-link link">
-                <div class="portfolio-thumb">
-                  <img class="cover" src="${books[1].book_image}" alt="${books[1].title}" loading="lazy" />
-                  <p class="overlay">
-                  QUICK VIEW
-                 </p>
-                </div> 
-                  <p class="name-book-text">${books[1].title}</p>
-                  <p class="author-book-text">${books[1].author}</p>
-                  </a>
-              </li>
-              <li class="best-item">
-                <a href="" class="portfolio-link link">
-                <div class="portfolio-thumb">
-                  <img class="cover" src="${books[2].book_image}" alt="${books[2].title}" loading="lazy" />
-                  <p class="overlay">
-                  QUICK VIEW
-                 </p>
-                </div> 
-                  <p class="name-book-text">${books[2].title}</p>
-                  <p class="author-book-text">${books[2].author}</p>
-                  </a>
-              </li>
-              <li class="best-item">
-                <a href="" class="portfolio-link link">
-                <div class="portfolio-thumb">
-                  <img class="cover" src="${books[3].book_image}" alt="${books[3].title}" loading="lazy" />
-                  <p class="overlay">
-                  QUICK VIEW
-                 </p>
-                </div> 
-                  <p class="name-book-text">${books[3].title}</p>
-                  <p class="author-book-text">${books[3].author}</p>
-                  </a>
-              </li>
-              <li class="best-item">
-                <a href="" class="portfolio-link link">
-                <div class="portfolio-thumb">
-                  <img class="cover" src="${books[4].book_image}" alt="${books[4].title}" loading="lazy" />
-                  <p class="overlay">
-                  QUICK VIEW
-                 </p>
-                </div> 
-                  <p class="name-book-text">${books[4].title}</p>
-                  <p class="author-book-text">${books[4].author}</p>
-                  </a>
-              </li>
+
+            <div class="best-list">
+                  <div class="best-item">
+                      <a href="" class="portfolio-link link">
+                        <div class="portfolio-thumb">
+              <div class="wrapper">          
+                        <img class="cover" src="${books[0].book_image}" alt="${books[0].title}" loading="lazy" />
+                            <p class="overlay">
+                            QUICK VIEW
+                            </p>
+                        </div> 
+               </div>   
+                        <p class="name-book-text">${books[0].title}</p>
+                        <p class="author-book-text">${books[0].author}</p>
+                      </a>
+                  </div>
               
-            </ul>
-          <button class="btn-seemore" type="button">SEE MORE</button>
-        </div>  
+
+              <div class="best-item">
+                      <a href="" class="portfolio-link link">
+                        <div class="portfolio-thumb">
+                   <div class="wrapper">     
+                        <img class="cover" src="${books[1].book_image}" alt="${books[1].title}" loading="lazy" />
+                            <p class="overlay">
+                            QUICK VIEW
+                            </p>
+                        </div> 
+                </div>  
+                        <p class="name-book-text">${books[1].title}</p>
+                        <p class="author-book-text">${books[1].author}</p>
+                      </a>
+              </div>
+
+
+              <div class="best-item">
+                      <a href="" class="portfolio-link link">
+                        <div class="portfolio-thumb">
+                 <div class="wrapper">       
+                        <img class="cover" src="${books[2].book_image}" alt="${books[2].title}" loading="lazy" />
+                            <p class="overlay">
+                            QUICK VIEW
+                            </p>
+                        </div> 
+                </div>  
+                        <p class="name-book-text">${books[2].title}</p>
+                        <p class="author-book-text">${books[2].author}</p>
+                      </a>
+              </div>
+
+
+              <div class="best-item">
+                      <a href="" class="portfolio-link link">
+                        <div class="portfolio-thumb">
+                  <div class="wrapper">      
+                        <img class="cover" src="${books[3].book_image}" alt="${books[3].title}" loading="lazy" />
+                            <p class="overlay">
+                            QUICK VIEW
+                            </p>
+                        </div> 
+                  </div>
+                        <p class="name-book-text">${books[3].title}</p>
+                        <p class="author-book-text">${books[3].author}</p>
+                      </a>
+              </div>
+
+              <div class="best-item">
+                      <a href="" class="portfolio-link link">
+                        <div class="portfolio-thumb">
+                   <div class="wrapper">     
+                        <img class="cover" src="${books[4].book_image}" alt="${books[4].title}" loading="lazy" />
+                            <p class="overlay">
+                            QUICK VIEW
+                            </p>
+                        </div> 
+                  </div>
+                        <p class="name-book-text">${books[4].title}</p>
+                        <p class="author-book-text">${books[4].author}</p>
+                      </a>
+                  
+              </div>
+</div>
+                   <button class="btn-seemore" type="button">SEE MORE</button>     
+                
+                </div>  
           `
     )
     .join('');
