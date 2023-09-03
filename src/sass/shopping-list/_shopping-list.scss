@@ -1,21 +1,46 @@
+.header-shoplist {
+  border: 1.5px solid #111;
+  border-radius: 0 0 8px 8px;
+}
+
+.header-shoplist .container {
+  align-items: center;
+  display: flex;
+}
 .container-shop-list {
     display: flex;
     gap: 40px;
-  
-    padding-top: 40px;
     padding-bottom: 40px;
-    margin-top: 74px;
+    margin-top: 40px;
+    
   }
   
-  .shop-list-aside {
-    display: none;
+
+
+@media screen and (min-width: 1440px){
+.shopping-list-aside {
+  display: flex;
+}
+
   }
-  @media screen and (min-width: 1440px) {
-    .shopping-list-aside {
-      display: flex;
-    }
-  }
-  
+@media screen and (min-width: 1440px){
+aside {
+  float: left;
+  margin-top: 40px;
+}
+}
+@media screen and (min-width: 768px) {
+aside {
+  margin-bottom: 100px;
+}
+}
+
+aside {
+  float: none;
+  display: block;
+  margin-top: 104px;
+  margin-bottom: 40px
+}
   .shoping-list-header {
     font-family: 'DM Sans';
     font-size: 32px;
