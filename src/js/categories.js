@@ -12,13 +12,14 @@ const refs = {
 refs.select.addEventListener("click", thisCategories);
 
 export function thisCategories(event) {
-	spinnerStartForCategories();
+
 	const result = event.target;
 
 	if (result.classList.value !== "categories-list") {
 		return;
 	}
 	try {
+
 		document.querySelector(".uppercase").classList.replace("uppercase", "categories-list");
 		result.classList.replace("categories-list", "uppercase");
 		const category = document.querySelector(".uppercase").textContent;
@@ -32,8 +33,14 @@ export function thisCategories(event) {
 			wordBegin = "Best Sellers";
 			wordEnd = "Books";
 			refs.homePage.classList.replace("categories-page", "home-page");
+			spinnerStartForCategories();
+			clearPage(wordBegin, wordEnd);
 			fetchBooksHomePage();
+			document.querySelector(".categories-list-book").style.display = "none";
+			spinerStopForCategories();
+			return;
 		}
+		spinnerStartForCategories();
 		clearPage(wordBegin, wordEnd);
 		refs.homePage.classList.replace("home-page", "categories-page");
 		fetchCatBooks(category).then((books) => {
@@ -101,5 +108,5 @@ function clearPage(wordBegin, wordEnd) {
 	refs.homePage.innerHTML = ` <h2 class="title-section">
     ${wordBegin} <span class="title-span" > ${wordEnd}</span >
   </h2 >
-  <div class="categories-list-book"></div>` ;
+  <div class="categories-list-book"></div>`;
 }
