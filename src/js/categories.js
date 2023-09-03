@@ -1,4 +1,5 @@
 import axios from "axios";
+import { fetchBooksHomePage } from "./home-page";
 const refs = {
 	select: document.querySelector(".categories"),
 	homePage: document.querySelector('.home-page'),
@@ -9,7 +10,7 @@ const refs = {
 }
 refs.select.addEventListener("click", thisCategories);
 
-function thisCategories(event) {
+export function thisCategories(event) {
 	const result = event.target;
 
 	if (result.classList.value !== "categories-list") {
@@ -21,12 +22,13 @@ function thisCategories(event) {
 
 	let wordBegin = category.split(" ").slice(0, category.split(" ").length - 1).join(" ");
 	let wordEnd = category.split(" ").slice(category.split(" ").length - 1, category.split(" ").length).join(" ");
-	console.log(wordBegin);
-	console.log(wordEnd);
+	// console.log(wordBegin);
+	// console.log(wordEnd);
 	if (category == "All categories") {
 		wordBegin = "Best Sellers";
 		wordEnd = "Books";
-
+		refs.homePage.classList.replace("categories-page", "home-page");
+		fetchBooksHomePage();
 	}
 	clearPage(wordBegin, wordEnd);
 	refs.homePage.classList.replace("home-page", "categories-page");
