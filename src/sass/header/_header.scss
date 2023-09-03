@@ -3,6 +3,7 @@
 .header {
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid $header-color-dark;
+  margin-bottom: 40px;
 }
 
 .header .container {
@@ -179,6 +180,23 @@
   border: none;
   background-color: transparent;
 }
+.burger-btn-close {
+  padding: 16.5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.burger-btn-close {
+  padding: 16.5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
 
 .burger-btn-icon {
   width: 28px;
@@ -203,4 +221,8 @@
   .user-btn {
     display: none;
   }
+}
+
+.js-switch-btn {
+  display: none;
 }

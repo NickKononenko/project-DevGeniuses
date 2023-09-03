@@ -1,0 +1,42 @@
+aside {
+  float: none;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.main-wrapper {
+  flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+  aside {
+    margin-bottom: 100px;
+  }
+  .left-side {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 86px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  aside {
+    float: left;
+  }
+
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+  }
+
+  .home-donate {
+    padding-left: 0px;
+  }
+  .main-wrapper {
+    display: flex;
+  }
+}

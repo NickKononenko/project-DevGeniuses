@@ -183,7 +183,7 @@ function createMarkup(arr) {
                         <div class="portfolio-thumb">
                    <div class="wrapper">     
                         <img class="cover" src="${books[4].book_image}" alt="${books[4].title}" loading="lazy" />
-                            <p class="overlay">
+               <p class="overlay">
                             QUICK VIEW
                             </p>
                         </div> 
@@ -195,7 +195,7 @@ function createMarkup(arr) {
               </li>
 </ul>
                    <button class="btn-seemore js-btn-more" data-id="${list_name}" type="button">SEE MORE</button>     
-                
+           
                 </div>  
           `
     )
