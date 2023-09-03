@@ -8,6 +8,7 @@
 .header .container {
   display: flex;
   align-items: center;
+  
 }
 
 // Header logo
@@ -179,6 +180,23 @@
   border: none;
   background-color: transparent;
 }
+.burger-btn-close { 
+padding: 16.5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.burger-btn-close { 
+  padding: 16.5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
 
 .burger-btn-icon {
   width: 28px;
@@ -203,4 +221,8 @@
   .user-btn {
     display: none;
   }
+}
+
+.js-switch-btn { 
+  display: none;
 }
