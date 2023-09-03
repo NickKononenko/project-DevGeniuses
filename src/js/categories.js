@@ -70,29 +70,28 @@ function createBooksCard(arr) {
 	const createCard = arr.map(
 		({ book_image, author, title }) =>
 			`
-			<div class="best-list">
+			
                   <div class="categories-direction">
                       <a href="" class="portfolio-link link">
-                        <div class="portfolio-thumb">
-              <div class="wrapper">          
+                        <div class="portfolio-thumb">        
                         <img class="cover" src="${book_image}" alt="${title}" loading="lazy" />
                             <p class="overlay">
                             QUICK VIEW
                             </p>
                         </div> 
-               </div>   
                         <p class="name-book-text">${title}</p>
                         <p class="author-book-text">${author}</p>
                       </a>
-                  </div>
+					  </div>
 				  `
 	)
 		.join('');
-	refs.homePage.insertAdjacentHTML('beforeend', createCard);
+	document.querySelector(".categories-list-book").insertAdjacentHTML('beforeend', createCard);
 
 }
 function clearPage(wordBegin, wordEnd) {
 	refs.homePage.innerHTML = ` <h2 class="title-section">
     ${wordBegin} <span class="title-span" > ${wordEnd}</span >
-  </h2 >` ;
+  </h2 >
+  <div class="categories-list-book"></div>` ;
 }

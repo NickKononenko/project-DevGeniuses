@@ -107,4 +107,14 @@
 }
 
 
-.categories-book-container {}
+
+
+.categories-list-book {
+	margin-top: 40px;
+	margin-bottom: 80px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 40px;
+
+}
