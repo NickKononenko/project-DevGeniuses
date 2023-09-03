@@ -5,7 +5,7 @@ import { fetchingByCategory } from './apiService';
 
 const refs = {
   homePage: document.querySelector('.home-page'),
-  homePage2: document.querySelector('.home-page2'),
+  // homePage2: document.querySelector('.home-page2'),
   // bestItem: document.querySelector('.best-item'),
 };
 
@@ -78,9 +78,9 @@ async function onBtnSeeMoreClick(evt) {
 function createMarkupCategories(array) {
   return array
     .map(
-      ({ list_name, books, _id, book_image, title, author }) =>
+      ({ _id, book_image, title, author }) =>
         `
-            <li class="book-item">
+            <li class="book-item" data-id="${_id}">
                   <a href="" class="portfolio-link link">
                   <div class="portfolio-thumb">
                       <div class="wrapper">          
@@ -109,7 +109,7 @@ function createMarkup(arr) {
           <h3 class="best-title">${list_name}</h3>
 
             <ul class="best-list">
-                  <li class="best-item">
+                  <li class="best-item" data-id="${books[0]._id}">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
               <div class="wrapper">          
@@ -127,7 +127,7 @@ function createMarkup(arr) {
                   </li>
               
 
-              <li class="best-item">
+              <li class="best-item" data-id="${books[1]._id}">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                    <div class="wrapper">     
@@ -145,7 +145,7 @@ function createMarkup(arr) {
               </li>
 
 
-              <li class="best-item">
+              <li class="best-item" data-id="${books[2]._id}">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                  <div class="wrapper">       
@@ -163,7 +163,7 @@ function createMarkup(arr) {
               </li>
 
 
-              <li class="best-item">
+              <li class="best-item" data-id="${books[3]._id}">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                   <div class="wrapper">      
@@ -180,7 +180,7 @@ function createMarkup(arr) {
                       </a>
               </li>
 
-              <li class="best-item">
+              <li class="best-item" data-id="${books[4]._id}">
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                    <div class="wrapper">     
