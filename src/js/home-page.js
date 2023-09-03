@@ -113,8 +113,7 @@ function createMarkup(arr) {
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
               <div class="wrapper">          
-                        <img class="cover" src="${books[0].book_image}" alt="${
-          books[0].title
+                        <img class="cover" src="${books[0].book_image}" alt="${books[0].title
         }" loading="lazy" />
                             <p class="overlay">
                             QUICK VIEW
@@ -131,8 +130,7 @@ function createMarkup(arr) {
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                    <div class="wrapper">     
-                        <img class="cover" src="${books[1].book_image}" alt="${
-          books[1].title
+                        <img class="cover" src="${books[1].book_image}" alt="${books[1].title
         }" loading="lazy" />
                             <p class="overlay">
                             QUICK VIEW
@@ -149,8 +147,7 @@ function createMarkup(arr) {
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                  <div class="wrapper">       
-                        <img class="cover" src="${books[2].book_image}" alt="${
-          books[2].title
+                        <img class="cover" src="${books[2].book_image}" alt="${books[2].title
         }" loading="lazy" />
                             <p class="overlay">
                             QUICK VIEW
@@ -167,8 +164,7 @@ function createMarkup(arr) {
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                   <div class="wrapper">      
-                        <img class="cover" src="${books[3].book_image}" alt="${
-          books[3].title
+                        <img class="cover" src="${books[3].book_image}" alt="${books[3].title
         }" loading="lazy" />
                             <p class="overlay">
                             QUICK VIEW
@@ -184,8 +180,7 @@ function createMarkup(arr) {
                       <a href="" class="portfolio-link link">
                         <div class="portfolio-thumb">
                    <div class="wrapper">     
-                        <img class="cover" src="${books[4].book_image}" alt="${
-          books[4].title
+                        <img class="cover" src="${books[4].book_image}" alt="${books[4].title
         }" loading="lazy" />
                             <p class="overlay">
                             QUICK VIEW
@@ -198,9 +193,8 @@ function createMarkup(arr) {
                   
               </li>
 </ul>
-                   <button class="btn-seemore js-btn-more" id="${
-                     i + 1
-                   }" type="button">SEE MORE</button>     
+                   <button class="btn-seemore js-btn-more" id="${i + 1
+        }" type="button">SEE MORE</button>     
                 
                 </div>  
           `
