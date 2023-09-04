@@ -57,3 +57,35 @@ body.dark-theme,
 .dark-theme .label-them {
     background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
 }
+
+.dark-theme .header-item-icon,
+.dark-theme .header-logo-icon {
+    fill: $header-color-ligth;
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-theme .nav-category-item.active,
+.dark-theme .nav-category-item:hover,
+.dark-theme .nav-category-item:active,
+.dark-theme .nav-category-item:focus {
+    color: $accent--text-color-dark;
+}
+
+.dark-theme .gallery-title,
+.dark-theme .gallery-book-name {
+    color: $secondary-text-color-dark;
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-theme .gallery-see-more-btn,
+.dark-theme .fav-add-book-btn {
+    color: $secondary-text-color-dark;
+    background-color: $bgc-dark-theme;
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-theme .gallery-see-more-btn:hover,
+.dark-theme .gallery-see-more-btn:focus {
+    color: $header-color-ligth;
+    background-color: $accent-color-ligth;
+}
