@@ -17,3 +17,23 @@ body.dark-theme,
 .dark-theme .footer__modal {
     background-color: #282525;
 }
+
+.dark-theme .header-container {
+    background: $header-color-dark;
+}
+
+.dark-theme .nav-categories-list::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear,
+            left bottom,
+            left top,
+            color-stop(0.5, rgb(48, 48, 50)),
+            color-stop(0.86, rgb(17, 17, 17)));
+}
+
+.dark-theme .nav-categories-list::-webkit-scrollbar {
+    background-color: #202024;
+}
+
+.dark-theme .label-them {
+    background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+}
