@@ -89,3 +89,21 @@ body.dark-theme,
     color: $header-color-ligth;
     background-color: $accent-color-ligth;
 }
+
+.dark-theme .footer__rights {
+    color: $header-color-ligth;
+}
+
+.dark-theme .footer__students {
+    color: $header-color-ligth;
+}
+
+.dark-theme .footer__dev {
+    color: $header-color-ligth;
+}
+
+.dark-theme .header-mobile-menu-icon,
+.dark-theme .header-burger-icon {
+    fill: $header-color-ligth;
+    stroke: $header-color-ligth;
+}
