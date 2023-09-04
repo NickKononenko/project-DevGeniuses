@@ -123,3 +123,19 @@ body.dark-theme,
 .dark-theme .close-modal-icon {
     stroke: $secondary-text-color-dark;
 }
+
+.dark-theme .congrats {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-theme .choice-btn {
+    background: transparent;
+}
+
+.dark-theme .brightness {
+    filter: grayscale(100%) brightness(10);
+}
+
+.dark-theme .shopping-list-text {
+    color: rgba(255, 255, 255, 0.6);
+}
