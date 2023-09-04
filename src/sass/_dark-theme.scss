@@ -176,6 +176,40 @@ body.dark-theme,
     color: $secondary-text-color-ligth;
 }
 
+.dark-theme .amaz {
+    filter: grayscale(100%) brightness(10);
+}
+
+.dark-theme .fav-add-book-btn {
+    color: $secondary-text-color-dark;
+}
+
+.dark-theme .close-modal-icon {
+    stroke: $secondary-text-color-dark;
+}
+
+.dark-theme .add-book-notification {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.dark-theme .nav-categories-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 4px rgb(32, 32, 36);
+    background-color: rgb(32, 32, 36);
+}
+
+.dark-theme .nav-categories-list::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear,
+            left bottom,
+            left top,
+            color-stop(0.5, rgb(48, 48, 50)),
+            color-stop(0.86, rgb(17, 17, 17)));
+}
+
+.dark-theme .nav-categories-list::-webkit-scrollbar {
+    background-color: #202024;
+}
+
 .dark-theme .modal-fav-descr {
     color: $secondary-text-color-dark;
 }
