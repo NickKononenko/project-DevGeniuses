@@ -139,3 +139,43 @@ body.dark-theme,
 .dark-theme .shopping-list-text {
     color: rgba(255, 255, 255, 0.6);
 }
+
+.dark-theme .modal-autoriz-close,
+.dark-theme .header-modal-form-field,
+.dark-theme .header-form-input {
+    background: transparent;
+}
+
+.dark-theme .header-form-input {
+    color: #f6f6f6;
+}
+
+.dark-theme .modal-autoriz-icon,
+.dark-theme .header-form-field,
+.dark-theme .header-form-input,
+.dark-theme .autoriz-icon {
+    fill: none;
+    stroke: #f6f6f6;
+    color: #f6f6f6;
+}
+
+.dark-theme .header-form-btn {
+    background: #f6f6f6;
+    color: #111111;
+}
+
+.dark-theme .header-form-link {
+    color: rgba(246, 246, 246, 0.5);
+}
+
+.dark-theme .modal-fav-title {
+    color: $secondary-text-color-dark;
+}
+
+.dark-theme .modal-fav-author {
+    color: $secondary-text-color-ligth;
+}
+
+.dark-theme .modal-fav-descr {
+    color: $secondary-text-color-dark;
+}
