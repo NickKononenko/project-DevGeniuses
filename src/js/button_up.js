@@ -2,7 +2,7 @@
 const mainWrapper = document.querySelector('.main-wrapper');
 mainWrapper.insertAdjacentHTML(
   'beforeend',
-  '<button class="btn-up hidden-btn_up" type="button"><svg class="icon-btn-up " width="24" height="24"><use href="./images/btn-up.svg"></use></svg>UP</button>'
+  '<button class="btn-up hidden-btn-up" type="button"><svg class="icon-btn-up " width="24" height="24"><use href="./images/sprite.svg#icon-arrow-up"></use></svg>UP</button>'
 );
 const btnRef = document.querySelector('.btn-up');
 console.log(btnRef);
@@ -26,8 +26,8 @@ function scrollToTop() {
 }
 
 function removeBtnUp() {
-  btnRef.classList.add('hide-btn_up');
+  btnRef.classList.add('hidden-btn-up');
 }
 function addBtnUp() {
-  btnRef.classList.remove('hide-btn_up');
+  btnRef.classList.remove('hidden-btn-up');
 }
