@@ -301,7 +301,6 @@
 
 /*------------------MODAL-----------------------------*/
 
-
 /* .header-mobile-box {
   position: relative;
 } */
@@ -338,7 +337,6 @@
   visibility: visible;
   pointer-events: auto;
 }
-
 
 .opacity {
   animation-duration: 0.9s;
@@ -454,8 +452,6 @@
   fill: #ffffff;
 }
 
-
-
 /*---------------------------------------------*/
 @media screen and (max-width: 767px) {
   .header-nav {
@@ -471,8 +467,7 @@
   }
 
   .header-container {
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding: 18px 22.5px;
     position: fixed;
     width: 375px;
     z-index: 999;
@@ -500,7 +495,9 @@
 
   .header-container {
     padding-top: 14px;
-    padding-bottom: 13px;
+    padding-bottom: 14px;
+    padding-left: 22.5px;
+    padding-right: 22.5px;
     position: fixed;
     z-index: 999;
     top: 0;
