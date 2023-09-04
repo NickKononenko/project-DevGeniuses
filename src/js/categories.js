@@ -1,112 +1,52 @@
-import axios from "axios";
-import { fetchBooksHomePage } from "./home-page";
-import { spinnerStartForCategories, spinerStopForCategories } from './spin';
-const refs = {
-	select: document.querySelector(".categories"),
-	homePage: document.querySelector('.home-page'),
-	homePageTitle: document.querySelector('.title-section'),
-	homePageWordEnd: document.querySelector('.title-span'),
-	categoriesCont: document.querySelector('.categories-cont')
+import axios from 'axios';
+import renderingByCategory from './renderingByCategory';
+const category_list = document.querySelector('.nav-categories-list');
 
-}
-refs.select.addEventListener("click", thisCategories);
-
-export function thisCategories(event) {
-
-	const result = event.target;
-
-	if (result.classList.value !== "categories-list") {
-		return;
-	}
-	try {
-
-		document.querySelector(".uppercase").classList.replace("uppercase", "categories-list");
-		result.classList.replace("categories-list", "uppercase");
-		const category = document.querySelector(".uppercase").textContent;
-
-		let wordBegin = category.split(" ").slice(0, category.split(" ").length - 1).join(" ");
-		let wordEnd = category.split(" ").slice(category.split(" ").length - 1, category.split(" ").length).join(" ");
-		// console.log(wordBegin);
-		// console.log(wordEnd);
-
-		if (category == "All categories") {
-			wordBegin = "Best Sellers";
-			wordEnd = "Books";
-			refs.homePage.classList.replace("categories-page", "home-page");
-			spinnerStartForCategories();
-			clearPage(wordBegin, wordEnd);
-			fetchBooksHomePage();
-			document.querySelector(".categories-list-book").style.display = "none";
-			spinerStopForCategories();
-			return;
-		}
-		spinnerStartForCategories();
-		clearPage(wordBegin, wordEnd);
-		refs.homePage.classList.replace("home-page", "categories-page");
-		fetchCatBooks(category).then((books) => {
-			createBooksCard(books)
-		});
-		spinerStopForCategories();
-	}
-	catch (error) {
-		console.log('catch error', error);
-	}
-
+async function getCategoryList() {
+  const { data } = await axios.get(
+    'https://books-backend.p.goit.global/books/category-list'
+  );
+  return data;
 }
 
-
-export async function fetchCategory() {
-	const url = "https://books-backend.p.goit.global/books/category-list";
-
-	const { data } = await axios.get(`${url}`);
-	return data;
+const renderCategories = async () => {
+  try {
+    const category = await getCategoryList();
+    category_list.innerHTML = await markupCategoriesList(category);
+    const listCategory = document.querySelectorAll('.nav-category-item');
+    listCategory.forEach(itemCategory => {
+      itemCategory.addEventListener('click', event => {
+        const ActiveCategory = document.querySelector(
+          '.nav-category-item.active'
+        );
+        if (ActiveCategory) {
+          ActiveCategory.classList.remove('active');
+        }
+        event.target.classList.add('active');
+      });
+    });
+  } catch (error) {
+    console.log('Oops! Something went wrong');
+  }
 };
 
-export async function fetchCatBooks(category) {
-	const url = "https://books-backend.p.goit.global/books/category?category="
+renderCategories();
+category_list.addEventListener('click', checkCategory);
 
-	const { data } = await axios.get(`${url}${category}`)
-	return data
+function checkCategory(e) {
+  if (e.target.dataset.id) {
+    renderingByCategory(e);
+  }
 }
 
-fetchCategory().then((breeds) => {
-	create(breeds);
-});
-
-function create(arr) {
-	const createMarkup = arr.map(
-		({ list_name }) =>
-			`<li class="categories-list">${list_name}</li>`).join("");
-	refs.select.insertAdjacentHTML("beforeend", createMarkup);
-}
-
-
-export function createBooksCard(arr) {
-
-	const createCard = arr.map(
-		({ book_image, _id, author, title }) =>
-			`
-                  <div class="categories-direction" id="${_id}">
-                      <a href="" class="portfolio-link link">
-                        <div class="portfolio-thumb">        
-                        <img class="cover" src="${book_image}" alt="${title}" loading="lazy" />
-                            <p class="overlay">
-                            QUICK VIEW
-                            </p>
-                        </div> 
-                        <p class="name-book-text">${title}</p>
-                        <p class="author-book-text">${author}</p>
-                      </a>
-					  </div>
-				  `
-	)
-		.join('');
-	document.querySelector(".categories-list-book").insertAdjacentHTML('beforeend', createCard);
-
-}
-function clearPage(wordBegin, wordEnd) {
-	refs.homePage.innerHTML = ` <h2 class="title-section">
-    ${wordBegin} <span class="title-span" > ${wordEnd}</span >
-  </h2 >
-  <div class="categories-list-book"></div>`;
+function markupCategoriesList(categories) {
+  return `<li class="nav-category-item active" data-id="all-categories">
+        All categories</li>
+        ${categories
+          .map(
+            category => `<li class="nav-category-item" data-id="${category.list_name}">
+        ${category.list_name}
+        </li>`
+          )
+          .join('')}`;
 }

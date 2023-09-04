@@ -1,8 +1,8 @@
 import { renderModalMarkup } from './renderModalMarkup';
 import { fetchBookById } from './fetchBookById';
-import { FavModal } from './pop-up';
+import { FavModal } from './modalFav';
 import Notiflix from 'notiflix';
-
+import getRefs from './homeRefs';
 import {
   addingToShopList,
   removingBookFromShoppingList,
@@ -10,7 +10,7 @@ import {
   saveToLocalStorage,
   loadFromLocalStorage,
   emptyRef,
-} from './shopping-list';
+} from './shoppingListService';
 
 const addBookNotif = document.querySelector('.add-book-notification');
 

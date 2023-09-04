@@ -1,16 +1,16 @@
-@import './common';
-@import './vars';
-@import './base';
 
-// Cтилі для кожного паршалу
-@import './header/header';
-@import './home-page/home-page';
-@import './categories/categories';
-@import './charity/charity';
-@import './pagination/pagination';
-@import './mobile-first-page/mobile-first-page';
-@import './pop-up/pop-up';
-@import './dark-theme/dark-theme';
-@import './shopping-list/shopping-list';
-@import './scroll-up.scss';
+@import './modern-normalize.min';
+@import './normalize';
 @import './aside';
+@import './button_up';
+@import './categories';
+@import './donate';
+@import './header';
+@import './home';
+@import './dark-theme';
+@import './modalFav';
+@import './reset';
+@import './vars';
+@import './shopping-list';
+@import './modal_autoriz';
+

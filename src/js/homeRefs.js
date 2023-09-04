@@ -8,4 +8,3 @@ export default function getRefs() {
       modal: document.querySelector('[data-modal]'),
     };
   }
-  

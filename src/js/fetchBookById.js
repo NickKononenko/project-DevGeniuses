@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 
 import { spinnerStart, spinnerStop } from './spin';
 
-const bookRef = document.querySelector('.modal-pop-book');
+const bookRef = document.querySelector('.modal-fav-book');
 
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/books/';
 
