@@ -6,17 +6,15 @@ import addBooksListeners from './addBooksListeners';
 const { galleryRef, categoriesRef } = getRefs();
 
 export default function renderingByCategory(e) {
-  // console.log('Rendering by category');
-
   galleryRef.innerHTML = '';
-  // Тицяти на кнопку більше
-  if (e.target.innerHTML === 'See more') {
+
+  if (e.target.classList.contains('gallery-see-more-btn')) {
     galleryRef.insertAdjacentHTML(
       'beforeend',
       `<h2 class="gallery-title">${e.target.dataset.category
         .trim()
         .split(' ')
-        .slice(0, e.target.innerHTML.length - 1)
+        .slice(0, length - 1)
         .join(
           ' '
         )} <span class = "gellery-title-akcent">${e.target.dataset.category
@@ -38,39 +36,29 @@ export default function renderingByCategory(e) {
       addBooksListeners();
     });
 
-    // Активно до нової категорії
-
     categoriesRef.querySelector('.active').classList.remove('active');
     document
       .querySelector(`[data-id="${e.target.dataset.category}"]`)
       .classList.add('active');
 
-    // Скролимо ап
-
     window.scrollTo(0, 0);
 
     return;
   }
-
-  //Тицяємо на всі категорії
 
   if (e.target.innerHTML.trim() === 'All categories') {
     renderingHomePage();
 
-    // Знов скрол ап
-
     window.scrollTo(0, 0);
     return;
   }
-
-  // Заголовок секції книжок
 
   galleryRef.insertAdjacentHTML(
     'beforeend',
     `<h2 class="gallery-title">${e.target.innerHTML
       .trim()
       .split(' ')
-      .slice(0, e.target.innerHTML.length - 1)
+      .slice(0, length - 1)
       .join(' ')} <span class = "gellery-title-akcent">${e.target.innerHTML
       .trim()
       .split(' ')
