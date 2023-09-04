@@ -1,73 +1,55 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BookShelf</title>
-    <link rel="icon" href="./images/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<head>
+    <meta charset="utf-8">
+
+    <link rel="icon" type="image/svg+xml" href="./images/sprite.svg">
+    <link rel="icon" type="image/svg+xml" href="./images/icon.svg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./sass/index.scss" />
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&amp;family=Roboto:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./sass/index.scss">
     <script type="module" src="index.js"></script>
-  </head>
 
-  <body>
+</head>
+
+<body>
+
     <header class="header-shoplist">
-      <div class="container">
-        <include src="./partials/header/header.html"></include>
-      </div>
+        <include src="./partials/header.html"></include>
     </header>
-
     <main>
-      <div class="container container-shop-list">
-        <aside
-          class="shopping-list-aside shop-list-aside"
-          style="padding-top: 0px"
-        >
-          <div class="home-donate">
-            <include src="./partials/charity/charity.html"></include>
-          </div>
-        </aside>
-        <div class="container-shopping-list">
-          <h1 class="shoping-list-header">
-            Shopping <span class="shoping-list-part">List</span>
-          </h1>
-          <div class="shopping-list"></div>
-          <div class="empty-shopping-list">
-            <p class="shopping-list-text">
-              This page is empty, add some books and proceed to order.
-            </p>
-            <img
-              srcset="
-                ./images/shopping_list/shoping-list-empty-lg-2x.png,
-                ./images/shopping_list/shoping-list-empty-mobile-sm-2x.png,
-                ./images/shopping_list/shoping-list-empty-mobile-sm.png
-              "
-              src="./images/shopping_list/shoping-list-empty-lg.png"
-              alt="img of books"
-              class="shopping-list-book-img"
-            />
-          </div>
+        <div class="container container-shop-list">
+            <aside class="shopping-list-aside shop-list-aside" style="padding-top: 0px">
+                <div class="home-donate">
+                    <include src="./partials/donate.html"></include>
+                </div>
+            </aside>
+            <div class="container-shopping-list">
+                <h1 class="shoping-list-header">
+                    Shopping <span class="shoping-list-part">List</span>
+                </h1>
+                <div class="shopping-list"></div>
+                <div class="empty-shopping-list">
+                    <p class="shopping-list-text">
+                        This page is empty, add some books and proceed to order.
+                    </p>
+                    <img srcset="
+                  ./images/shoping-list-empty-lg-2x.png,
+                  ./images/shoping-list-empty-mobile-sm-2x.png,
+                  ./images/shoping-list-empty-mobile-sm.png
+                " src="./images/shoping-list-empty-lg.png" alt="img of books" class="shopping-list-book-img" />
+                </div>
+            </div>
         </div>
-      </div>
-      <include src="./partials/pagination/pagination.html"></include>
+        <include src="./partials/button_up.html"></include>
     </main>
+    <footer>
+    </footer>
+    <script type="module" src="./shopping-list.js"></script>
+</body>
 
-    <!-- JS LINKS -->
-    <script type="module" src="./js/shopping-list.js"></script>
-    <script type="module" src="./js/header.js"></script>
-
-    <script type="module" src="./js/charity.js"></script>
-    <script type="module" src="./js/pagination.js"></script>
-
-    <script type="module" src="./js/dark-theme.js"></script>
-    <script type="module" src="./js/mobile-first-page.js"></script>
-    <script type="module" src="./js/fetchBookById.js"></script>
-    <script type="module" src="./js/apiService.js"></script>
-    <script type="module" src="./js/spin.js"></script>
-  </body>
 </html>

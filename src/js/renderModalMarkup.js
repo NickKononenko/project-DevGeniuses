@@ -1,6 +1,6 @@
-import amazonLink from '../images/pop-up/amazon.png';
-import appleBooks from '../images/pop-up/apple-books.png';
-import bookShop from '../images/pop-up/book-shop.png';
+import amazonLink from '../images/amazon.png';
+import appleBooks from '../images/apple-books.png';
+import bookShop from '../images/book-shop.png';
 
 let isAuth;
 let isAuthSrt;
@@ -13,8 +13,8 @@ function renderModalMarkup({
   buy_links,
   _id,
 }) {
-  const bookRef = document.querySelector('.modal-pop-book');
-  const modalRef = document.querySelector('.modal-pop');
+  const bookRef = document.querySelector('.modal-fav-book');
+  const modalRef = document.querySelector('.modal-fav');
   const btnWrap = document.querySelector('.btn-wrap');
   let buyMarkup = [];
   let markupImg;
@@ -69,27 +69,27 @@ function renderModalMarkup({
   });
 
   if (book_image !== '') {
-    markupImg = `<img class="modal-pop-image" src="${book_image}" alt="book-cover"/>`;
+    markupImg = `<img class="modal-fav-image" src="${book_image}" alt="book-cover"/>`;
   } else {
-    markupImg = `<img class="modal-pop-image" src="../images/Logotype.png" alt="book-cover"/>`;
+    markupImg = `<img class="modal-fav-image" src="../images/Logotype.png" alt="book-cover"/>`;
   }
 
   if (title !== '') {
-    markupTitle = `<h1 class="modal-pop-title">${title}</h1>`;
+    markupTitle = `<h1 class="modal-fav-title">${title}</h1>`;
   } else {
-    markupTitle = `<h1 class="modal-pop-title">No title</h1>`;
+    markupTitle = `<h1 class="modal-fav-title">No title</h1>`;
   }
 
   if (author !== '') {
-    markupAuthor = `<h2 class="modal-pop-author">${author}</h2>`;
+    markupAuthor = `<h2 class="modal-fav-author">${author}</h2>`;
   } else {
-    markupAuthor = `<h2 class="modal-pop-author">No author name</h2>`;
+    markupAuthor = `<h2 class="modal-fav-author">No author name</h2>`;
   }
 
   if (description !== '') {
-    markupDescription = `<p class="modal-pop-descr">${description}</p>`;
+    markupDescription = `<p class="modal-fav-descr">${description}</p>`;
   } else {
-    markupDescription = `<p class="modal-pop-descr">No description</p>`;
+    markupDescription = `<p class="modal-fav-descr">No description</p>`;
   }
 
   const markup = `${markupImg}
@@ -102,7 +102,7 @@ ${markupDescription}
   bookRef.innerHTML = markup;
   if (isAuth) {
     btnWrap.innerHTML =
-      '<button class="pop-add-book-btn" data-id = ${_id} type="button">add to shopping list</button>';
+      '<button class="fav-add-book-btn" data-id = ${_id} type="button">add to shopping list</button>';
   } else {
     return;
   }
