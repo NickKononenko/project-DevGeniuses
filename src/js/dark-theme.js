@@ -19,3 +19,26 @@ inputTheme.addEventListener('change', () => {
   currentTheme();
 });
 
+
+function currentTheme() {
+  try {
+    indexTheme = localStorage.getItem('userTheme') === 'dark' ? true : false;
+  } catch (error) {
+    indexTheme = false;
+    }
+      const logo = document.querySelector('.header-logo-icon');
+  const logo1 = document.querySelector('.header-logo-icon1');
+  if (indexTheme) {
+    body.classList.add('dark-theme');
+    spanTheme.style.left = '20px';
+    logo.style.width = '0px';
+    logo1.style.width = '109px';
+  } else {
+    body.classList.remove('dark-theme');
+    spanTheme.style.left = '2px';
+    logo1.style.width = '0px';
+    logo.style.width = '109px';
+  }
+}
+
+currentTheme();
