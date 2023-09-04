@@ -1,4 +1,3 @@
-console.log('test')
 
 const inputTheme = document.querySelector('.div-theme');
 const spanTheme = document.querySelector('.span-theme');
@@ -42,7 +41,6 @@ function currentTheme() {
 }
 
 currentTheme();
-
 
 const headerNavLinks = document
   .querySelector('.header-nav-item')
