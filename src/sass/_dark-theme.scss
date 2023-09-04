@@ -34,6 +34,26 @@ body.dark-theme,
     background-color: #202024;
 }
 
+.dark-theme .header-link-item .heder-active {
+    color: $header-color-dark;
+}
+
+.dark-theme .header-link-item,
+.dark-theme .modal-close-btn-icon {
+    color: $header-color-ligth;
+    fill: $header-color-ligth;
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-theme .header-link-item .heder-active {
+    font-weight: 700;
+    color: $header-color-dark;
+}
+
+.dark-theme .nav-category-item {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .dark-theme .label-them {
     background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
 }
