@@ -1,0 +1,19 @@
+.header-logo-container {
+    display: flex;
+}
+
+body,
+.header-container {
+    transition: all 0.3s ease-in-out;
+}
+
+body.dark-theme,
+.dark-theme .modal-fav,
+/* .dark-theme .footer__modal, */
+.dark-theme .heder-modal-autoriz {
+    background-color: $bgc-dark-theme;
+}
+
+.dark-theme .footer__modal {
+    background-color: #282525;
+}
