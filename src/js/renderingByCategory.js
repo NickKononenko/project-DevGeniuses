@@ -10,19 +10,21 @@ export default function renderingByCategory(e) {
 
   galleryRef.innerHTML = '';
   // Тицяти на кнопку більше
+
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
       'beforeend',
       `<h2 class="gallery-title">${e.target.dataset.category
         .trim()
-        .split(' ')
-        .slice(0, e.target.innerHTML.length - 1)
-        .join(
-          ' '
-        )} <span class = "gellery-title-akcent">${e.target.dataset.category
-        .trim()
-        .split(' ')
-        .pop()}</span></h2>`
+        .split(' ').slice(0, e.target.dataset.category
+          .trim()
+          .split(' ').length - 1).join(" ")} <span class = "gellery-title-akcent">${e.target.dataset.category
+            .trim()
+            .split(' ').slice(e.target.dataset.category
+              .trim()
+              .split(' ').length - 1, e.target.dataset.category
+                .trim()
+                .split(' ').length).join(" ")}</span></h2>`
     );
     galleryRef.insertAdjacentHTML(
       'beforeend',
@@ -67,14 +69,20 @@ export default function renderingByCategory(e) {
 
   galleryRef.insertAdjacentHTML(
     'beforeend',
+    //   category.split(" ").slice(category.split(" ").length - 1, category.split(" ").length).join(" ");
+    // category.split(" ").slice(0, category.split(" ").length - 1).join(" ");
     `<h2 class="gallery-title">${e.target.innerHTML
       .trim()
-      .split(' ')
-      .slice(0, e.target.innerHTML.length - 1)
-      .join(' ')} <span class = "gellery-title-akcent">${e.target.innerHTML
-      .trim()
-      .split(' ')
-      .pop()}</span></h2>`
+      .split(' ').slice(0, e.target.innerHTML
+        .trim()
+        .split(' ').length - 1).join(" ")} <span class = "gellery-title-akcent">${e.target.innerHTML
+          .trim()
+          .split(' ').slice(e.target.innerHTML
+            .trim()
+            .split(' ').length - 1, e.target.innerHTML
+              .trim()
+              .split(' ').length).join(" ")}</span></h2>`
+
   );
 
   galleryRef.insertAdjacentHTML(
