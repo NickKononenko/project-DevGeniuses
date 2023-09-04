@@ -7,7 +7,6 @@ const { galleryRef, categoriesRef } = getRefs();
 
 export default function renderingByCategory(e) {
   galleryRef.innerHTML = '';
-
   if (e.target.classList.contains('gallery-see-more-btn')) {
     galleryRef.insertAdjacentHTML(
       'beforeend',
@@ -55,6 +54,8 @@ export default function renderingByCategory(e) {
 
   galleryRef.insertAdjacentHTML(
     'beforeend',
+    //   category.split(" ").slice(category.split(" ").length - 1, category.split(" ").length).join(" ");
+    // category.split(" ").slice(0, category.split(" ").length - 1).join(" ");
     `<h2 class="gallery-title">${e.target.innerHTML
       .trim()
       .split(' ')
@@ -63,6 +64,7 @@ export default function renderingByCategory(e) {
       .trim()
       .split(' ')
       .pop()}</span></h2>`
+
   );
 
   galleryRef.insertAdjacentHTML(

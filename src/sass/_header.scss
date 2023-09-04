@@ -469,7 +469,7 @@
   .header-container {
     padding: 18px 22.5px;
     position: fixed;
-    width: 375px;
+    max-width: 375px;
     z-index: 999;
     top: 0;
     left: 0;
@@ -481,6 +481,7 @@
 .header-box {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .switch {
@@ -494,6 +495,8 @@
   }
 
   .header-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    pointer-events: all;
     padding-top: 14px;
     padding-bottom: 14px;
     padding-left: 22.5px;
@@ -504,6 +507,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+    max-width: 768px;
   }
 
   .header-modal-container,
@@ -526,6 +530,10 @@
   .header-modal,
   .header-modal-content {
     display: none;
+  }
+
+  .header-container {
+    max-width: 1440px;
   }
 }
 
