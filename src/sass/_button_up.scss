@@ -15,19 +15,16 @@
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-up:hover {
+.btn-up:hover,
+.btn-up:focus {
   box-shadow: 0px 0px 0px 6px rgba(79, 46, 232, 0.3);
 }
 
-// .hide-btn_up {
-//   opacity: 0;
-//   pointer-events: none;
-// }
 .hidden-btn-up {
   opacity: 0;
   pointer-events: none;
 }
 
 .icon-btn-up {
-  color: white;
+  fill: white;
 }
