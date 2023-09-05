@@ -5,7 +5,6 @@
 //   '<button class="btn-up hidden-btn-up" type="button"><svg class="icon-btn-up " width="24" height="24"><use href="./images/sprite.svg#icon-arrow-up"></use></svg></button>'
 // );
 const btnRef = document.querySelector('.btn-up');
-console.log(btnRef);
 
 window.addEventListener('scroll', function () {
   if (window.pageYOffset > 1000) {
