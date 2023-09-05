@@ -5,7 +5,12 @@ import renderingByCategory from './renderingByCategory';
 import addBooksListeners from './addBooksListeners';
 const { galleryRef } = getRefs();
 
+
+
 export function renderingHomePage() {
+  if (!galleryRef) {
+    return
+  }
   galleryRef.innerHTML = '';
   if (document.documentElement.clientWidth < 768) {
     galleryRef.insertAdjacentHTML(

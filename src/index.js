@@ -1,4 +1,3 @@
-import './shopping-list.js';
 import './js/headermodal.js';
 import './js/categories.js';
 import './js/home.js';
