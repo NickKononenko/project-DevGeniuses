@@ -1,8 +1,6 @@
 @import 'vars';
 
 .donate-container {
-
-  height: 352px;
   padding: 24px 40px;
   background: $support-section-color;
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
@@ -10,24 +8,9 @@
 }
 
 .gradient {
-  height: 352px;
   background: linear-gradient(149deg,
       rgba(79, 46, 232, 1) rgba(245, 245, 247, 0.1));
   background-size: 400%;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 80% 0%;
-  }
-
-  50% {
-    background-position: 20% 100%;
-  }
-
-  100% {
-    background-position: 80% 0%;
-  }
 }
 
 .donate-paragraph {
@@ -63,7 +46,7 @@
 
 .donate-funds-visible {
   width: 170px;
-  height: 220px;
+  height: 208px;
   overflow: hidden;
 
   margin-bottom: 10px;
@@ -196,21 +179,12 @@
 /* -----------------------! Arrow up!--------------------------------- */
 
 @media screen and (min-width: 768px) {
-  .donate-container {
-    height: 472px;
-  }
 
   .donate-header {
     margin-bottom: 25px;
   }
 
   .donate-funds-visible {
-    height: 320px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .donate-container {
-    height: 490px;
+    height: 310px;
   }
 }
