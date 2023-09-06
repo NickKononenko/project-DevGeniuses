@@ -1,6 +1,7 @@
 #tui-pagination-container {
   display: flex;
   justify-content: center;
+
   .tui-pagination * {
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -154,6 +155,8 @@
     border: 1px solid #111111;
     border-radius: 50%;
     margin-right: 8px;
+    font-weight: bold;
+    font-family: "DM Sans", sans-serif;
   }
 
   .tui-is-selected,
@@ -168,14 +171,17 @@
     background-color: #111111;
   }
 
-  .tui-page-btn:not(.tui-is-disabled):hover {
+  .tui-page-btn:not(.tui-is-disabled):hover,
+  .tui-page-btn:not(.tui-is-disabled):focus {
     background-color: #eac645;
+    
   }
 
-  .tui-page-btn.tui-is-disabled,
-  .tui-page-btn.tui-is-disabled:hover {
-    background-color: #111111;
-  }
+  // .tui-page-btn.tui-is-disabled,
+  // .tui-page-btn.tui-is-disabled:hover,
+  // .tui-page-btn.tui-is-disabled:focus {
+  //   background-color: #111111;
+  // }
 
   .tui-first-child {
     margin-left: 14px;
@@ -213,4 +219,34 @@
     padding: 8px 0 6px;
     vertical-align: top;
   }
+
+  @media screen and (min-width: 769px) {
+    .tui-page-btn {
+      height: 44px;
+      width: 44px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .tui-page-btn {
+      width: 38px;
+      height: 38px;
+    }
+    .tui-is-disabled.tui-first,
+    .tui-is-disabled.tui-prev {
+      margin-right: 5px;
+    }
+    .tui-first-child {
+      margin-left: 9px;
+      margin-right: 8px;
+    }
+    .tui-pagination{
+      visiblePages: 1
+    }
+
+    .tui-page-btn {
+      // display: none;
+    }
+  }
+
 }
