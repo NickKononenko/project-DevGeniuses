@@ -168,8 +168,13 @@
     background-color: #111111;
   }
 
-  .tui-page-btn:hover {
+  .tui-page-btn:not(.tui-is-disabled):hover {
     background-color: #eac645;
+  }
+
+  .tui-page-btn.tui-is-disabled,
+  .tui-page-btn.tui-is-disabled:hover {
+    background-color: #111111;
   }
 
   .tui-first-child {

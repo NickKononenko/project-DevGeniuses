@@ -82,6 +82,8 @@ function renderingShoppingList() {
   }
 }
 
+
+
 function updatePagination() {
   if (pagination) {
     pagination.destroy();
@@ -98,7 +100,8 @@ function updatePagination() {
   };
 
   pagination = new Pagination(paginationContainer, paginationOptions);
-
+  
+  
   pagination.on('afterMove', function (eventData) {
     const currentPage = eventData.page;
     renderBooksOnPage(currentPage);
@@ -126,9 +129,11 @@ function renderBooksOnPage(page) {
               <h2 class="shopping-list-book-title">${book.title}</h2>
               <p class="shopping-list-book-category">${book.list_name}</p>
             </div>
+
           <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
               <img src="${imageUrl}" />
           </button>
+
           </div>
           <p class="shopping-list-book-about">${book.description}</p>
           <div class="shopping-list-book">

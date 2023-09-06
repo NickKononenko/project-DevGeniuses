@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookshelf</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&amp;family=Roboto:wght@400;700&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./sass/index.scss">
-</head>
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&amp;family=Roboto:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
 
-<body>
-
+  <body>
     <header class="header-shoplist">
-        <include src="./partials/header.html"></include>
+      <include src="./partials/header.html"></include>
     </header>
     <main>
-        <div class="container container-shop-list">
-            <aside class="shopping-list-aside shop-list-aside" style="padding-top: 0px">
-                <div class="home-donate">
-                    <include src="./partials/donate.html"></include>
-                </div>
-            </aside>
-            <div class="container-shopping-list">
-                <h1 class="shoping-list-header">
-                    Shopping <span class="shoping-list-part">List</span>
-                </h1>
-                <div class="shopping-list"></div>
-                <div class="custom-tui-pagination">
-                  <div id="tui-pagination-container" class="tui-pagination"></div>
-                </div>
-                <div class="empty-shopping-list">
-                    <p class="shopping-list-text">
-                        This page is empty, add some books and proceed to order.
-                    </p>
-                    <img srcset="
-                  ./images/shoping-list-empty-lg-2x.png,
-                  ./images/shoping-list-empty-mobile-sm-2x.png,
-                  ./images/shoping-list-empty-mobile-sm.png
-                " src="./images/shoping-list-empty-lg.png" alt="img of books" class="shopping-list-book-img" />
-                </div>
-            </div>
+      <div class="container container-shop-list">
+        <aside
+          class="shopping-list-aside shop-list-aside"
+          style="padding-top: 0px"
+        >
+          <div class="home-donate">
+            <include src="./partials/donate.html"></include>
+          </div>
+        </aside>
+        <div class="container-shopping-list">
+          <h1 class="shoping-list-header">
+            Shopping <span class="shoping-list-part">List</span>
+          </h1>
+          <div class="shopping-list"></div>
+          <div id="tui-pagination-container" class="tui-pagination"></div>
+          <div class="empty-shopping-list">
+            <p class="shopping-list-text">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <img
+              srcset="
+                ./images/shoping-list-empty-lg-2x.png,
+                ./images/shoping-list-empty-mobile-sm-2x.png,
+                ./images/shoping-list-empty-mobile-sm.png
+              "
+              src="./images/shoping-list-empty-lg.png"
+              alt="img of books"
+              class="shopping-list-book-img"
+            />
+          </div>
         </div>
-        <include src="./partials/button_up.html"></include>
+      </div>
+      <include src="./partials/button_up.html"></include>
     </main>
-    <footer>
-    </footer>
+    <footer></footer>
     <script type="module" src="./index.js"></script>
-</body>
-
+  </body>
 </html>
