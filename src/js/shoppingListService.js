@@ -126,17 +126,9 @@ function renderBooksOnPage(page) {
               <h2 class="shopping-list-book-title">${book.title}</h2>
               <p class="shopping-list-book-category">${book.list_name}</p>
             </div>
-<<<<<<< Updated upstream
           <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
               <img src="${imageUrl}" />
           </button>
-=======
-            <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
-              <svg class="delete-shopping-list-icon">
-                <use href="${imageUrl}"></use>
-              </svg>
-            </button>
->>>>>>> Stashed changes
           </div>
           <p class="shopping-list-book-about">${book.description}</p>
           <div class="shopping-list-book">
