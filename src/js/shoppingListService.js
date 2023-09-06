@@ -1,3 +1,5 @@
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 import { fetchingByBook } from './apiService';
 import Notiflix from 'notiflix';
 import amazon from '../images/amazon.png';
@@ -7,7 +9,7 @@ import imageUrl from '../images/trashicon.png';
 
 Notiflix.Notify.init({
   width: '370px',
-  position: 'center-top', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
+  position: 'center-top',
   distance: '10px',
   opacity: 1,
   borderRadius: '18px',
@@ -16,7 +18,7 @@ Notiflix.Notify.init({
   ID: 'NotiflixNotify',
   className: 'notiflix-notify',
   fontFamily: 'DM Sans',
-  cssAnimationStyle: 'from-top', // 'fade' - 'zoom' - 'from-right' - 'from-top' - 'from-bottom' - 'from-left'
+  cssAnimationStyle: 'from-top',
 
   info: {
     background: '#4F2EE8',
@@ -46,9 +48,16 @@ if (booksArray === null) {
   booksArray = [];
 }
 
+
+const paginationContainer = document.getElementById('tui-pagination-container');
+let itemsPerPage = 4;
+let pagination = null;
+
 renderingShoppingList();
 
 function renderingShoppingList() {
+
+  const booksList = document.querySelector('.shopping-list');
   if (!booksList) {
     return;
   }
@@ -70,25 +79,82 @@ function renderingShoppingList() {
     if (booksArray.length > 0) {
       emptyRef.classList.add('visuallyhidden');
     }
-    for (let i = 0; i < booksArray.length; i++) {
-      const book = loadFromLocalStorage(booksArray[i]._id);
-      booksList.insertAdjacentHTML(
-        'beforeend',
-        `<div class="shopping-list-thumb">
-        <div class="cover-shopping-list" style="background-image: url('${book.book_image}'); background-size: cover;">
-          </div>
-          <div class="book-interface">
+
+    updatePagination();
+  }
+}
+
+
+function updatePagination() {
+  // if (pagination) {
+  //   pagination.destroy();
+  // }
+
+  const totalItems = booksArray.length;
+  // const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  let paginationOptions;
+
+  const paginationOptionsDesktop = {
+    totalItems: totalItems,
+    itemsPerPage: 4,
+    visiblePages: 3,
+    page: 1,
+  };
+
+  const paginationOptionsMobile = {
+    totalItems: totalItems,
+    itemsPerPage: 4,
+    visiblePages: 1,
+    page: 1,
+  };
+
+  if (window.innerWidth <= 768) {
+    paginationOptions = paginationOptionsMobile;
+  } else {
+    paginationOptions = paginationOptionsDesktop;
+  }
+  
+  pagination = new Pagination(paginationContainer, paginationOptions);
+
+  pagination.on('afterMove', function (eventData) {
+    const currentPage = eventData.page;
+    renderBooksOnPage(currentPage);
+  });
+
+  renderBooksOnPage(1);
+  
+}
+
+window.addEventListener('resize', updatePagination);
+
+function renderBooksOnPage(page) {
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const booksToDisplay = booksArray.slice(startIndex, endIndex);
+
+  booksList.innerHTML = '';
+
+  for (let i = 0; i < booksToDisplay.length; i++) {
+    const book = loadFromLocalStorage(booksToDisplay[i]._id);
+    booksList.insertAdjacentHTML(
+      'beforeend',
+      `<div class="shopping-list-thumb">
+        <div class="cover-shopping-list" style="background-image: url('${book.book_image}'); background-size: cover;"></div>
+        <div class="book-interface">
           <div class="book-title-btn">
-          <div>
-          <h2 class="shopping-list-book-title">${book.title}</h2>
-            <p class="shopping-list-book-category">${book.list_name}</p>
+            <div>
+              <h2 class="shopping-list-book-title">${book.title}</h2>
+              <p class="shopping-list-book-category">${book.list_name}</p>
             </div>
+
           <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
               <img src="${imageUrl}" />
           </button>
+
           </div>
-            <p class="shopping-list-book-about">${book.description}</p>
-            <div class="shopping-list-book">
+          <p class="shopping-list-book-about">${book.description}</p>
+          <div class="shopping-list-book">
             <p class="shopping-list-book-author">${book.author}</p>
             <ul class="shopping-list-trading">
               <li class="shopping-list-trading-item">
@@ -108,14 +174,9 @@ function renderingShoppingList() {
               </li>
             </ul>
           </div>
-        </div>`
-      );
-    }
-  }
-
-  const deleteBtnRefs = document.querySelectorAll('.delete-shopping-list-btn');
-  for (let i = 0; i < deleteBtnRefs.length; i++) {
-    deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
+        </div>
+      </div>`
+    );
   }
 }
 
@@ -139,8 +200,8 @@ export function removingBookFromShoppingList(e) {
     emptyRef.classList.remove('visuallyhidden');
   }
 }
-export { saveToLocalStorage };
-function saveToLocalStorage(book) {
+
+export function saveToLocalStorage(book) {
   try {
     if (booksArray === null) {
       booksArray = [];
@@ -165,4 +226,6 @@ export function loadFromLocalStorage(id) {
   } catch (error) {
     console.log(error);
   }
+
+  
 }

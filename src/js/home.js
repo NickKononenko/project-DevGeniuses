@@ -1,6 +1,7 @@
 import throttle from 'lodash/throttle';
 import { renderingHomePage } from './renderingHomePage';
 
+
 renderingHomePage();
 
 let screenSize = document.documentElement.clientWidth;
@@ -28,7 +29,11 @@ onresize = throttle(e => {
 }, 100);
 
 function reloadingHomePage() {
+
   const activeCategory = document.querySelector('.active');
+  if (!activeCategory) {
+    return;
+  }
   if (activeCategory.innerHTML.trim() === 'All categories') {
     renderingHomePage();
   }
