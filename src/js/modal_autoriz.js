@@ -94,7 +94,6 @@ headerLogOutBtn.addEventListener('click', logOut);
 
 mobileSignInREf.addEventListener('click', () => {
   backdropRef.classList.remove('is-hidden');
-  console.log('click');
 });
 
 inputElements.forEach((el, i) => {
