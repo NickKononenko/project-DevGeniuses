@@ -48,7 +48,6 @@ if (booksArray === null) {
   booksArray = [];
 }
 
-
 const paginationContainer = document.getElementById('tui-pagination-container');
 let itemsPerPage = 4;
 let pagination = null;
@@ -56,7 +55,6 @@ let pagination = null;
 renderingShoppingList();
 
 function renderingShoppingList() {
-
   const booksList = document.querySelector('.shopping-list');
   if (!booksList) {
     return;
@@ -83,7 +81,6 @@ function renderingShoppingList() {
     updatePagination();
   }
 }
-
 
 function updatePagination() {
   // if (pagination) {
@@ -114,7 +111,7 @@ function updatePagination() {
   } else {
     paginationOptions = paginationOptionsDesktop;
   }
-  
+
   pagination = new Pagination(paginationContainer, paginationOptions);
 
   pagination.on('afterMove', function (eventData) {
@@ -123,7 +120,6 @@ function updatePagination() {
   });
 
   renderBooksOnPage(1);
-  
 }
 
 window.addEventListener('resize', updatePagination);
@@ -180,6 +176,14 @@ function renderBooksOnPage(page) {
   }
 }
 
+export const deleteBtnRefs = document.querySelectorAll(
+  '.delete-shopping-list-btn'
+);
+
+for (let i = 0; i < deleteBtnRefs.length; i++) {
+  deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
+}
+
 export async function addingToShopList(e) {
   const book = await fetchingByBook(e.target.dataset.id);
   saveToLocalStorage(book);
@@ -226,6 +230,4 @@ export function loadFromLocalStorage(id) {
   } catch (error) {
     console.log(error);
   }
-
-  
 }
