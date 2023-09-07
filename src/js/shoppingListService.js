@@ -83,8 +83,6 @@ function renderingShoppingList() {
   }
 }
 
-// window.addEventListener('resize', updatePagination);
-
 function updatePagination() {
   if (pagination) {
     pagination.reset();
@@ -125,7 +123,6 @@ function updatePagination() {
   renderBooksOnPage(1);
 }
 
-// window.addEventListener('resize', updatePagination);
 
 function renderBooksOnPage(page) {
   const startIndex = (page - 1) * itemsPerPage;
