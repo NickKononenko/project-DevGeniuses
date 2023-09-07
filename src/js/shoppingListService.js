@@ -36,8 +36,6 @@ Notiflix.Notify.init({
   },
 });
 
-
-
 export const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
 export let booksArray;
@@ -68,7 +66,7 @@ function renderingShoppingList() {
 
   if (books === null || books.length === 0) {
     emptyRef.classList.remove('visuallyhidden');
-    paginationContainer.remove()
+    paginationContainer.remove();
   } else {
     booksList.innerHTML = '';
     const dataJSON = localStorage.getItem('books');
@@ -113,7 +111,7 @@ function updatePagination() {
     page: 1,
   };
 
-  if (window.matchMedia("(max-width: 768px)").matches) {
+  if (window.matchMedia('(max-width: 768px)').matches) {
     paginationOptions = paginationOptionsMobile;
   } else {
     paginationOptions = paginationOptionsDesktop;
@@ -128,8 +126,6 @@ function updatePagination() {
 
   renderBooksOnPage(1);
 }
-
-
 
 function renderBooksOnPage(page) {
   const startIndex = (page - 1) * itemsPerPage;
@@ -182,18 +178,16 @@ function renderBooksOnPage(page) {
     );
   }
   const deleteBtnRefs = document.querySelectorAll('.delete-shopping-list-btn');
-for (let i = 0; i < deleteBtnRefs.length; i++) {
-  deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
+  for (let i = 0; i < deleteBtnRefs.length; i++) {
+    deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
+  }
 }
-}
-
 
 export async function addingToShopList(e) {
-const book = await fetchingByBook(e.target.dataset.id);
-saveToLocalStorage(book);
-Notiflix.Notify.success('Book added to shopping list');
+  const book = await fetchingByBook(e.target.dataset.id);
+  saveToLocalStorage(book);
+  Notiflix.Notify.success('Book added to shopping list');
 }
-
 
 export function removingBookFromShoppingList(e) {
   const id = e.currentTarget.dataset.id;
