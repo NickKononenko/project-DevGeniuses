@@ -7,8 +7,6 @@ import appleBooks from '../images/apple-books.png';
 import bookShop from '../images/book-shop.png';
 import imageUrl from '../images/trashicon.png';
 
-console.log('hi');
-
 Notiflix.Notify.init({
   width: '370px',
   position: 'center-top',
