@@ -36,6 +36,8 @@ Notiflix.Notify.init({
   },
 });
 
+
+
 export const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
 export let booksArray;
@@ -83,6 +85,8 @@ function renderingShoppingList() {
   }
 }
 
+window.addEventListener('resize', renderingShoppingList);
+
 function updatePagination() {
   if (pagination) {
     pagination.reset();
@@ -96,7 +100,7 @@ function updatePagination() {
   const paginationOptionsDesktop = {
     totalItems: totalItems,
     itemsPerPage: 4,
-    visiblePages: 1,
+    visiblePages: 2,
     page: 1,
   };
 
@@ -122,6 +126,7 @@ function updatePagination() {
 
   renderBooksOnPage(1);
 }
+
 
 
 function renderBooksOnPage(page) {
@@ -174,13 +179,19 @@ function renderBooksOnPage(page) {
       </div>`
     );
   }
+  const deleteBtnRefs = document.querySelectorAll('.delete-shopping-list-btn');
+for (let i = 0; i < deleteBtnRefs.length; i++) {
+  deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
+}
 }
 
+
 export async function addingToShopList(e) {
-  const book = await fetchingByBook(e.target.dataset.id);
-  saveToLocalStorage(book);
-  Notiflix.Notify.success('Book added to shopping list');
+const book = await fetchingByBook(e.target.dataset.id);
+saveToLocalStorage(book);
+Notiflix.Notify.success('Book added to shopping list');
 }
+
 
 export function removingBookFromShoppingList(e) {
   const id = e.currentTarget.dataset.id;
