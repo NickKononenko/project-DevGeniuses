@@ -66,8 +66,9 @@ function renderingShoppingList() {
   const data = localStorage.getItem('books');
   const books = JSON.parse(data);
 
-  if (books === null) {
+  if (books === null || books.length === 0) {
     emptyRef.classList.remove('visuallyhidden');
+    paginationContainer.remove()
   } else {
     booksList.innerHTML = '';
     const dataJSON = localStorage.getItem('books');
@@ -79,6 +80,7 @@ function renderingShoppingList() {
   if (booksArray !== null) {
     if (booksArray.length > 0) {
       emptyRef.classList.add('visuallyhidden');
+      paginationContainer.style.display = 'flex';
     }
 
     updatePagination();
