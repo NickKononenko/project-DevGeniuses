@@ -64,7 +64,7 @@ function renderingShoppingList() {
   const data = localStorage.getItem('books');
   const books = JSON.parse(data);
 
-  if (books === null || books.length === 0) {
+  if (books === null || books.length <= itemsPerPage) {
     emptyRef.classList.remove('visuallyhidden');
     paginationContainer.remove();
   } else {
