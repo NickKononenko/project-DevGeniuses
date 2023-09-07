@@ -48,15 +48,14 @@ if (booksArray === null) {
   booksArray = [];
 }
 
-
 const paginationContainer = document.getElementById('tui-pagination-container');
+
 let itemsPerPage = 4;
 let pagination = null;
 
 renderingShoppingList();
 
 function renderingShoppingList() {
-
   const booksList = document.querySelector('.shopping-list');
   if (!booksList) {
     return;
@@ -84,21 +83,22 @@ function renderingShoppingList() {
   }
 }
 
+// window.addEventListener('resize', updatePagination);
 
 function updatePagination() {
-  // if (pagination) {
-  //   pagination.destroy();
-  // }
+  if (pagination) {
+    pagination.reset();
+  }
 
   const totalItems = booksArray.length;
-  // const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   let paginationOptions;
 
   const paginationOptionsDesktop = {
     totalItems: totalItems,
     itemsPerPage: 4,
-    visiblePages: 3,
+    visiblePages: 1,
     page: 1,
   };
 
@@ -109,12 +109,12 @@ function updatePagination() {
     page: 1,
   };
 
-  if (window.innerWidth <= 768) {
+  if (window.matchMedia("(max-width: 768px)").matches) {
     paginationOptions = paginationOptionsMobile;
   } else {
     paginationOptions = paginationOptionsDesktop;
   }
-  
+
   pagination = new Pagination(paginationContainer, paginationOptions);
 
   pagination.on('afterMove', function (eventData) {
@@ -123,10 +123,9 @@ function updatePagination() {
   });
 
   renderBooksOnPage(1);
-  
 }
 
-window.addEventListener('resize', updatePagination);
+// window.addEventListener('resize', updatePagination);
 
 function renderBooksOnPage(page) {
   const startIndex = (page - 1) * itemsPerPage;
@@ -226,6 +225,4 @@ export function loadFromLocalStorage(id) {
   } catch (error) {
     console.log(error);
   }
-
-  
 }
