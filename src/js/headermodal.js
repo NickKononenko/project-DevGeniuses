@@ -10,6 +10,7 @@ burgerBtn.addEventListener('click', function () {
   // modal.style.display = 'block';
   modal.classList.add('menu-is-open');
   burgerBtn.classList.add('hidden');
+  closeBtn.classList.remove('hidden');
   modalChannel.postMessage({ action: 'openModal' });
 });
 
@@ -17,6 +18,7 @@ closeBtn.addEventListener('click', function () {
   // modal.style.display = 'none';
   modal.classList.remove('menu-is-open');
   burgerBtn.classList.remove('hidden');
+  closeBtn.classList.add('hidden');
 });
 
 modalChannel.addEventListener('message', function (event) {
