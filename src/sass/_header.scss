@@ -291,12 +291,15 @@
 }
 
 .header-mobile-menu-icon {
-  display: inline-block;
   width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    opacity: 1;
+    width: 20px;
+    height: 28px;
+    display: inline-block;
 }
 
 /*------------------MODAL-----------------------------*/
@@ -364,12 +367,7 @@
 }
 
 .menu-toggle-close {
-  position: absolute;
-  top: -39px;
-  right: 20px;
   background-color: transparent;
-  border: none;
-  cursor: pointer;
 }
 
 .header-user-modal {
